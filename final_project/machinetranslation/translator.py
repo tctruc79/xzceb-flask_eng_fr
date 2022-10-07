@@ -26,15 +26,21 @@ def english_to_french(english_text):
     """
     Translates english to french
     """
-    french_trans=language_translator.translate(text=english_text, model_id='en-fr').get_result()
-    french_text=french_trans['translations'][0]['translation']
-    return french_text
+    if (english_text != None):
+        french_trans=language_translator.translate(text=english_text, model_id='en-fr').get_result()
+        french_text=french_trans['translations'][0]['translation']
+        return french_text
+    else:
+        return None
 
 
 def french_to_english(french_text):
     """
     Translates french to english
     """
-    english_trans=language_translator.translate(text=french_text, model_id='fr-en').get_result()
-    english_text=english_trans['translations'][0]['translation']
-    return english_text
+    if (french_text != None):
+        english_trans=language_translator.translate(text=french_text, model_id='fr-en').get_result()
+        english_text=english_trans['translations'][0]['translation']
+        return english_text
+    else:
+        return None
